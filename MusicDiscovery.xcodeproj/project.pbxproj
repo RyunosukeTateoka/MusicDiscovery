@@ -14,6 +14,8 @@
 		F89C1BAA2884341600FDFDBC /* MusicAlbumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */; };
 		F89C1BB12884376B00FDFDBC /* MusicTracksRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB02884376B00FDFDBC /* MusicTracksRow.swift */; };
 		F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB42884393000FDFDBC /* MusicTrack.swift */; };
+		F89C1BB9288B9AA400FDFDBC /* MusicTracksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB8288B9AA400FDFDBC /* MusicTracksList.swift */; };
+		F89C1BBB288CFAC000FDFDBC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BBA288CFAC000FDFDBC /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlbumsApp.swift; sourceTree = "<group>"; };
 		F89C1BB02884376B00FDFDBC /* MusicTracksRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTracksRow.swift; sourceTree = "<group>"; };
 		F89C1BB42884393000FDFDBC /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
+		F89C1BB8288B9AA400FDFDBC /* MusicTracksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTracksList.swift; sourceTree = "<group>"; };
+		F89C1BBA288CFAC000FDFDBC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F89C1BB42884393000FDFDBC /* MusicTrack.swift */,
+				F89C1BBA288CFAC000FDFDBC /* ModelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				F89C1BB02884376B00FDFDBC /* MusicTracksRow.swift */,
+				F89C1BB8288B9AA400FDFDBC /* MusicTracksList.swift */,
 			);
 			path = MusicCollection;
 			sourceTree = "<group>";
@@ -173,8 +179,10 @@
 				F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */,
 				F89C1BB12884376B00FDFDBC /* MusicTracksRow.swift in Sources */,
 				F89C1B9C2884243000FDFDBC /* ContentView.swift in Sources */,
+				F89C1BB9288B9AA400FDFDBC /* MusicTracksList.swift in Sources */,
 				F89C1B9A2884243000FDFDBC /* MusicDiscoveryApp.swift in Sources */,
 				F89C1BAA2884341600FDFDBC /* MusicAlbumsApp.swift in Sources */,
+				F89C1BBB288CFAC000FDFDBC /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
