@@ -16,14 +16,23 @@ struct PlaybackBar: View {
                 Spacer()
                 
                 HStack {
+                    Spacer()
+                    
                     AsyncImage(url: currentTrack.imageUrl)
-                        .frame(width: 80, height: 80, alignment: .center)
-                        .cornerRadius(8)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 64, height: 64, alignment: .center)
+                        .cornerRadius(4)
+                        .padding()
+                    
+                    Spacer()
+                    
                     PlayPauseButton()
-                        .font(.system(size: 45))
+                        .font(.system(size: 32))
                     .padding()
+                    
+                    Spacer()
                 }
-                
+                .background(.gray)
             }
         }
     }

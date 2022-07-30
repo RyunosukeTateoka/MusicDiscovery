@@ -13,6 +13,7 @@ final class ModelData: ObservableObject {
     @Published var musicTracks = [MusicTrack]()
     @Published var currentTrack: MusicTrack?
     @Published var isPlaying = false
+    @Published var isSelected = false
     
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     

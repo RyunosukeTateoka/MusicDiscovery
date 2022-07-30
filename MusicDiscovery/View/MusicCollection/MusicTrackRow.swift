@@ -31,6 +31,8 @@ struct MusicTrackRow: View {
         .onTapGesture {
             modelData.currentTrack = musicTrack
             modelData.musicPlayer.setQueue(with: [musicTrack.id])
+            modelData.isSelected = true
+            modelData.musicPlayer.play()
             modelData.isPlaying = true
         }
     }

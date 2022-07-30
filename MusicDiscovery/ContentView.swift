@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             MusicTrackList()
-            if modelData.isPlaying {
+            if modelData.isSelected {
                 PlaybackBar()
                     .environmentObject(modelData)
                     .zIndex(2.0)
