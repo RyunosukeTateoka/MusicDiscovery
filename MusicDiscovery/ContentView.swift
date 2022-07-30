@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var modelData: ModelData
+    
     var body: some View {
-        MusicTracksList()
+        ZStack {
+            MusicTrackList()
+            if modelData.isPlaying {
+                PlaybackBar()
+                    .environmentObject(modelData)
+                    .zIndex(2.0)
+            }
+        }
     }
 }
 

@@ -12,10 +12,12 @@
 		F89C1B9E2884243200FDFDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89C1B9D2884243200FDFDBC /* Assets.xcassets */; };
 		F89C1BA12884243200FDFDBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89C1BA02884243200FDFDBC /* Preview Assets.xcassets */; };
 		F89C1BAA2884341600FDFDBC /* MusicAlbumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */; };
-		F89C1BB12884376B00FDFDBC /* MusicTracksRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB02884376B00FDFDBC /* MusicTracksRow.swift */; };
+		F89C1BB12884376B00FDFDBC /* MusicTrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */; };
 		F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB42884393000FDFDBC /* MusicTrack.swift */; };
-		F89C1BB9288B9AA400FDFDBC /* MusicTracksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB8288B9AA400FDFDBC /* MusicTracksList.swift */; };
+		F89C1BB9288B9AA400FDFDBC /* MusicTrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */; };
 		F89C1BBB288CFAC000FDFDBC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BBA288CFAC000FDFDBC /* ModelData.swift */; };
+		F89C1BC1288D441800FDFDBC /* PlaybackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */; };
+		F89C1BC3288D481700FDFDBC /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +27,13 @@
 		F89C1B9D2884243200FDFDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F89C1BA02884243200FDFDBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlbumsApp.swift; sourceTree = "<group>"; };
-		F89C1BB02884376B00FDFDBC /* MusicTracksRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTracksRow.swift; sourceTree = "<group>"; };
+		F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackRow.swift; sourceTree = "<group>"; };
 		F89C1BB42884393000FDFDBC /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
-		F89C1BB8288B9AA400FDFDBC /* MusicTracksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTracksList.swift; sourceTree = "<group>"; };
+		F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackList.swift; sourceTree = "<group>"; };
 		F89C1BBA288CFAC000FDFDBC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		F89C1BBC288D422600FDFDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackBar.swift; sourceTree = "<group>"; };
+		F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 		F89C1B982884243000FDFDBC /* MusicDiscovery */ = {
 			isa = PBXGroup;
 			children = (
+				F89C1BBC288D422600FDFDBC /* Info.plist */,
 				F89C1BA82884280D00FDFDBC /* Model */,
 				F89C1BA72884280700FDFDBC /* View */,
 				F89C1B992884243000FDFDBC /* MusicDiscoveryApp.swift */,
@@ -83,6 +89,7 @@
 		F89C1BA72884280700FDFDBC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F89C1BBF288D440700FDFDBC /* MusicPlayer */,
 				F89C1BAF2884375100FDFDBC /* MusicCollection */,
 			);
 			path = View;
@@ -100,10 +107,19 @@
 		F89C1BAF2884375100FDFDBC /* MusicCollection */ = {
 			isa = PBXGroup;
 			children = (
-				F89C1BB02884376B00FDFDBC /* MusicTracksRow.swift */,
-				F89C1BB8288B9AA400FDFDBC /* MusicTracksList.swift */,
+				F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */,
+				F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */,
 			);
 			path = MusicCollection;
+			sourceTree = "<group>";
+		};
+		F89C1BBF288D440700FDFDBC /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */,
+				F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */,
+			);
+			path = MusicPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89C1BC1288D441800FDFDBC /* PlaybackBar.swift in Sources */,
 				F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */,
-				F89C1BB12884376B00FDFDBC /* MusicTracksRow.swift in Sources */,
+				F89C1BB12884376B00FDFDBC /* MusicTrackRow.swift in Sources */,
 				F89C1B9C2884243000FDFDBC /* ContentView.swift in Sources */,
-				F89C1BB9288B9AA400FDFDBC /* MusicTracksList.swift in Sources */,
+				F89C1BC3288D481700FDFDBC /* PlayPauseButton.swift in Sources */,
+				F89C1BB9288B9AA400FDFDBC /* MusicTrackList.swift in Sources */,
 				F89C1B9A2884243000FDFDBC /* MusicDiscoveryApp.swift in Sources */,
 				F89C1BAA2884341600FDFDBC /* MusicAlbumsApp.swift in Sources */,
 				F89C1BBB288CFAC000FDFDBC /* ModelData.swift in Sources */,
@@ -314,6 +332,7 @@
 				DEVELOPMENT_TEAM = 3JZK8358R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicDiscovery/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access to continue.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -344,6 +363,7 @@
 				DEVELOPMENT_TEAM = 3JZK8358R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicDiscovery/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access to continue.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

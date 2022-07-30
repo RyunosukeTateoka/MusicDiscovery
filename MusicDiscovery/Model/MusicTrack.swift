@@ -7,9 +7,10 @@
 
 import MusicKit
 import Foundation
+import MediaPlayer
 
 struct MusicTrack: Identifiable, Hashable {
-    var id = UUID()
+    var id: String
     let name: String
     let artist: String
     let imageUrl: URL?

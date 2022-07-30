@@ -8,7 +8,7 @@
 import MusicKit
 import SwiftUI
 
-struct MusicTracksList: View {
+struct MusicTrackList: View {
     @EnvironmentObject var modelData: ModelData
     @State var musicTracks = [MusicTrack]()
     
@@ -17,14 +17,15 @@ struct MusicTracksList: View {
         
         NavigationView {
             List(modelData.musicTracks) { musicTrack in
-                MusicTracksRow(musicTrack: musicTrack)
+                MusicTrackRow(musicTrack: musicTrack)
             }
+            .navigationTitle("Search Results")
         }
     }
 }
 
 struct MusicTracksList_Previews: PreviewProvider {
     static var previews: some View {
-        MusicTracksList()
+        MusicTrackList()
     }
 }
