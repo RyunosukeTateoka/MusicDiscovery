@@ -11,9 +11,11 @@ struct PlaybackBar: View {
     @EnvironmentObject var modelData: ModelData
 
     var body: some View {
+        let deviceScreenSize = UIScreen.main.bounds.size.width
+        
         if let currentTrack = modelData.currentTrack {
-            VStack {
-                Spacer()
+            VStack() {
+                Spacer(minLength: 0)
                 
                 HStack {
                     Spacer()
@@ -33,6 +35,9 @@ struct PlaybackBar: View {
                     Spacer()
                 }
                 .background(.gray)
+                .cornerRadius(8)
+                .aspectRatio(2 / 3, contentMode: .fit)
+                .frame(width: 9 / 10 * deviceScreenSize)
             }
         }
     }

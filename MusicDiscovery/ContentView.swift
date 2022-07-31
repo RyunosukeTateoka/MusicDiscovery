@@ -11,7 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var modelData: ModelData
     
     var body: some View {
-        ZStack {
+        ZStack() {
             MusicTrackList()
             if modelData.isSelected {
                 PlaybackBar()
