@@ -20,6 +20,7 @@
 		F89C1BC3288D481700FDFDBC /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */; };
 		F89E34C22897396800743B6D /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = F89E34C12897396800743B6D /* ColorKit */; };
 		F89E34C528973FEB00743B6D /* ColorArrange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89E34C428973FEB00743B6D /* ColorArrange.swift */; };
+		F89E34C7289BCC7300743B6D /* ProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89E34C6289BCC7300743B6D /* ProgressSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackBar.swift; sourceTree = "<group>"; };
 		F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 		F89E34C428973FEB00743B6D /* ColorArrange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorArrange.swift; sourceTree = "<group>"; };
+		F89E34C6289BCC7300743B6D /* ProgressSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */,
 				F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */,
+				F89E34C6289BCC7300743B6D /* ProgressSlider.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F89E34C528973FEB00743B6D /* ColorArrange.swift in Sources */,
+				F89E34C7289BCC7300743B6D /* ProgressSlider.swift in Sources */,
 				F89C1BC1288D441800FDFDBC /* PlaybackBar.swift in Sources */,
 				F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */,
 				F89C1BB12884376B00FDFDBC /* MusicTrackRow.swift in Sources */,

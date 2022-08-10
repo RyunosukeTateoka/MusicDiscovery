@@ -27,18 +27,23 @@ struct PlaybackBar: View {
         VStack() {
             Spacer(minLength: 0)
             
-            HStack {
-                Spacer()
-                
-                artwork
-                
-                Spacer()
-                
-                PlayPauseButton()
-                    .font(.system(size: 32))
-                .padding()
-                
-                Spacer()
+            VStack() {
+                ProgressSlider()
+                    .padding(.horizontal)
+                    .padding(.top)
+                HStack {
+                    Spacer()
+                    
+                    artwork
+                    
+                    Spacer()
+                    
+                    PlayPauseButton()
+                        .font(.system(size: 32))
+                    .padding()
+                    
+                    Spacer()
+                }
             }
             .background(.ultraThinMaterial)
             .background(currentBackgroundColor?.opacity(0.48))
