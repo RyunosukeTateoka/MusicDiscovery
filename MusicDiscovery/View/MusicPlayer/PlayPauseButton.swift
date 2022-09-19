@@ -11,7 +11,7 @@ struct PlayPauseButton: View {
     @EnvironmentObject var modelData: ModelData
     
     var body: some View {
-        Image(systemName: modelData.musicPlayer.playbackState == .playing ? "pause.fill" : "play.fill")
+        Image(systemName: modelData.isPlaying ? "pause.fill" : "play.fill")
             .onTapGesture {
                 if modelData.musicPlayer.playbackState == .paused || modelData.musicPlayer.playbackState == .stopped {
                     modelData.musicPlayer.play()

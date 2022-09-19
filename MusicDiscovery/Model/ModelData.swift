@@ -14,6 +14,7 @@ final class ModelData: ObservableObject {
     @Published var currentTrack: MusicTrack?
     @Published var isPlaying = false
     @Published var isSelected = false
+    @Published var searchQuery: String = ""
     
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     
@@ -34,6 +35,37 @@ final class ModelData: ObservableObject {
             case .authorized:
                 do {
                     let result = try await request.response()
+                    self.musicTracks = result.songs.compactMap({
+                        return .init(
+                            id: $0.id.rawValue,
+                            name: $0.title,
+                            artist: $0.artistName,
+                            imageUrl: $0.artwork?.url(width: 75, height: 75)
+                        )
+                    })
+                    print(String(describing: musicTracks[0]))
+                } catch {
+                    print(String(describing: error))
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    private func generateSearchRequest(searchQuery: String) -> MusicCatalogSearchRequest {
+        var request = MusicCatalogSearchRequest(term: searchQuery, types: [Song.self])
+        request.limit = 25
+        return request
+    }
+
+    func searchMusicTracks(searchQuery: String) {
+        Task {
+            let status = await MusicAuthorization.request()
+            switch status {
+            case .authorized:
+                do {
+                    let result = try await generateSearchRequest(searchQuery: searchQuery).response()
                     self.musicTracks = result.songs.compactMap({
                         return .init(
                             id: $0.id.rawValue,

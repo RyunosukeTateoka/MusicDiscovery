@@ -34,7 +34,7 @@ struct ProgressSlider: View {
     }
     
     private func updatePlayingTime() {
-            self.playingTime = modelData.musicPlayer.currentPlaybackTime
+        self.playingTime = modelData.musicPlayer.currentPlaybackTime
     }
 }
 
