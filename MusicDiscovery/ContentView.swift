@@ -12,11 +12,12 @@ struct ContentView: View {
     
     var body: some View {
         ZStack() {
-            MusicTrackList()
+            LibraryBasedDiscovery()
             if modelData.isSelected {
                 PlaybackBar()
                     .environmentObject(modelData)
                     .zIndex(2.0)
+                    .ignoresSafeArea(.keyboard, edges: .bottom)
             }
         }
     }

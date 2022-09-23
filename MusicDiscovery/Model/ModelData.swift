@@ -14,41 +14,57 @@ final class ModelData: ObservableObject {
     @Published var currentTrack: MusicTrack?
     @Published var isPlaying = false
     @Published var isSelected = false
+    @Published var isSearching = false
     @Published var searchQuery: String = ""
+    @Published var libraryPlaylists = [MusicPlaylist]()
     
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     
     init() {
-        fetchMusic()
+        loadLibraryPlaylist()
     }
-
-    private let request: MusicCatalogSearchRequest = {
-        var request = MusicCatalogSearchRequest(term: "Louie Vega", types: [Song.self])
-        request.limit = 25
-        return request
-    }()
-
-    private func fetchMusic() {
+    
+    private func loadLibraryPlaylist(){
         Task {
             let status = await MusicAuthorization.request()
             switch status {
             case .authorized:
                 do {
-                    let result = try await request.response()
-                    self.musicTracks = result.songs.compactMap({
-                        return .init(
-                            id: $0.id.rawValue,
-                            name: $0.title,
-                            artist: $0.artistName,
-                            imageUrl: $0.artwork?.url(width: 75, height: 75)
-                        )
-                    })
-                    print(String(describing: musicTracks[0]))
+                    if #available(iOS 16.0, *) {
+                        let request = MusicLibraryRequest<Playlist>()
+                        let response = try await request.response()
+                        self.libraryPlaylists = response.items.compactMap({
+                            return .init(
+                                id: $0.id.rawValue,
+                                name: $0.name,
+                                imageUrl: $0.artwork?.url(width: 75, height: 75),
+                                lastPlayedDate: $0.lastPlayedDate
+                            )
+                        })
+                        self.libraryPlaylists = sortPlaylistsByLastPlayedDate(playlists: libraryPlaylists)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 } catch {
                     print(String(describing: error))
                 }
             default:
                 break
+            }
+        }
+    }
+    
+    private func sortPlaylistsByLastPlayedDate(playlists: [MusicPlaylist]) -> [MusicPlaylist] {
+        return playlists.sorted { (a, b) -> Bool in
+            switch (a.lastPlayedDate, b.lastPlayedDate) {
+            case (.some, .some):
+                return a.lastPlayedDate! > b.lastPlayedDate!
+
+            case (.some, .none):
+                return true
+
+            case (.none, _):
+                return false
             }
         }
     }

@@ -49,7 +49,7 @@ struct PlaybackBar: View {
             .background(currentBackgroundColor?.opacity(0.48))
             .cornerRadius(8)
             .aspectRatio(2 / 3, contentMode: .fit)
-            .frame(width: 9 / 10 * deviceScreenSize)
+            .frame(width: 19 / 20 * deviceScreenSize)
         }
     }
     
