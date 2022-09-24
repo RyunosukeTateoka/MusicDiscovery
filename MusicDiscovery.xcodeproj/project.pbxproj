@@ -7,18 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F862145E28DCB6F5005A6624 /* MusicPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862145D28DCB6F5005A6624 /* MusicPlaylist.swift */; };
+		F862146028DD5C7D005A6624 /* LibraryBasedDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862145F28DD5C7D005A6624 /* LibraryBasedDiscovery.swift */; };
+		F862146228DD6878005A6624 /* PlaylistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862146128DD6878005A6624 /* PlaylistRow.swift */; };
 		F89C1B9A2884243000FDFDBC /* MusicDiscoveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1B992884243000FDFDBC /* MusicDiscoveryApp.swift */; };
 		F89C1B9C2884243000FDFDBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1B9B2884243000FDFDBC /* ContentView.swift */; };
 		F89C1B9E2884243200FDFDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89C1B9D2884243200FDFDBC /* Assets.xcassets */; };
 		F89C1BA12884243200FDFDBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89C1BA02884243200FDFDBC /* Preview Assets.xcassets */; };
+		F89C1BAA2884341600FDFDBC /* MusicAlbumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */; };
+		F89C1BB12884376B00FDFDBC /* MusicTrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */; };
+		F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB42884393000FDFDBC /* MusicTrack.swift */; };
+		F89C1BB9288B9AA400FDFDBC /* MusicTrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */; };
+		F89C1BBB288CFAC000FDFDBC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BBA288CFAC000FDFDBC /* ModelData.swift */; };
+		F89C1BC1288D441800FDFDBC /* PlaybackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */; };
+		F89C1BC3288D481700FDFDBC /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */; };
+		F89E34C22897396800743B6D /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = F89E34C12897396800743B6D /* ColorKit */; };
+		F89E34C528973FEB00743B6D /* ColorArrange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89E34C428973FEB00743B6D /* ColorArrange.swift */; };
+		F89E34C7289BCC7300743B6D /* ProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89E34C6289BCC7300743B6D /* ProgressSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F862145D28DCB6F5005A6624 /* MusicPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlaylist.swift; sourceTree = "<group>"; };
+		F862145F28DD5C7D005A6624 /* LibraryBasedDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBasedDiscovery.swift; sourceTree = "<group>"; };
+		F862146128DD6878005A6624 /* PlaylistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRow.swift; sourceTree = "<group>"; };
 		F89C1B962884243000FDFDBC /* MusicDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89C1B992884243000FDFDBC /* MusicDiscoveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDiscoveryApp.swift; sourceTree = "<group>"; };
 		F89C1B9B2884243000FDFDBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F89C1B9D2884243200FDFDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F89C1BA02884243200FDFDBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlbumsApp.swift; sourceTree = "<group>"; };
+		F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackRow.swift; sourceTree = "<group>"; };
+		F89C1BB42884393000FDFDBC /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
+		F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackList.swift; sourceTree = "<group>"; };
+		F89C1BBA288CFAC000FDFDBC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		F89C1BBC288D422600FDFDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackBar.swift; sourceTree = "<group>"; };
+		F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
+		F89E34C428973FEB00743B6D /* ColorArrange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorArrange.swift; sourceTree = "<group>"; };
+		F89E34C6289BCC7300743B6D /* ProgressSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89E34C22897396800743B6D /* ColorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +78,13 @@
 		F89C1B982884243000FDFDBC /* MusicDiscovery */ = {
 			isa = PBXGroup;
 			children = (
+				F89E34C328973FC500743B6D /* Helper */,
+				F89C1BBC288D422600FDFDBC /* Info.plist */,
+				F89C1BA82884280D00FDFDBC /* Model */,
+				F89C1BA72884280700FDFDBC /* View */,
 				F89C1B992884243000FDFDBC /* MusicDiscoveryApp.swift */,
 				F89C1B9B2884243000FDFDBC /* ContentView.swift */,
+				F89C1BA92884341600FDFDBC /* MusicAlbumsApp.swift */,
 				F89C1B9D2884243200FDFDBC /* Assets.xcassets */,
 				F89C1B9F2884243200FDFDBC /* Preview Content */,
 			);
@@ -65,6 +97,54 @@
 				F89C1BA02884243200FDFDBC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F89C1BA72884280700FDFDBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F89C1BBF288D440700FDFDBC /* MusicPlayer */,
+				F89C1BAF2884375100FDFDBC /* MusicCollection */,
+				F862145F28DD5C7D005A6624 /* LibraryBasedDiscovery.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F89C1BA82884280D00FDFDBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F89C1BB42884393000FDFDBC /* MusicTrack.swift */,
+				F89C1BBA288CFAC000FDFDBC /* ModelData.swift */,
+				F862145D28DCB6F5005A6624 /* MusicPlaylist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F89C1BAF2884375100FDFDBC /* MusicCollection */ = {
+			isa = PBXGroup;
+			children = (
+				F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */,
+				F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */,
+				F862146128DD6878005A6624 /* PlaylistRow.swift */,
+			);
+			path = MusicCollection;
+			sourceTree = "<group>";
+		};
+		F89C1BBF288D440700FDFDBC /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F89C1BC0288D441800FDFDBC /* PlaybackBar.swift */,
+				F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */,
+				F89E34C6289BCC7300743B6D /* ProgressSlider.swift */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		F89E34C328973FC500743B6D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F89E34C428973FEB00743B6D /* ColorArrange.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +163,9 @@
 			dependencies = (
 			);
 			name = MusicDiscovery;
+			packageProductDependencies = (
+				F89E34C12897396800743B6D /* ColorKit */,
+			);
 			productName = MusicDiscovery;
 			productReference = F89C1B962884243000FDFDBC /* MusicDiscovery.app */;
 			productType = "com.apple.product-type.application";
@@ -95,7 +178,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					F89C1B952884243000FDFDBC = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -109,8 +192,12 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = F89C1B8D2884243000FDFDBC;
+			packageReferences = (
+				F89E34C02897396800743B6D /* XCRemoteSwiftPackageReference "ColorKit" */,
+			);
 			productRefGroup = F89C1B972884243000FDFDBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +224,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F862146228DD6878005A6624 /* PlaylistRow.swift in Sources */,
+				F89E34C528973FEB00743B6D /* ColorArrange.swift in Sources */,
+				F89E34C7289BCC7300743B6D /* ProgressSlider.swift in Sources */,
+				F89C1BC1288D441800FDFDBC /* PlaybackBar.swift in Sources */,
+				F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */,
+				F89C1BB12884376B00FDFDBC /* MusicTrackRow.swift in Sources */,
 				F89C1B9C2884243000FDFDBC /* ContentView.swift in Sources */,
+				F89C1BC3288D481700FDFDBC /* PlayPauseButton.swift in Sources */,
+				F89C1BB9288B9AA400FDFDBC /* MusicTrackList.swift in Sources */,
 				F89C1B9A2884243000FDFDBC /* MusicDiscoveryApp.swift in Sources */,
+				F862145E28DCB6F5005A6624 /* MusicPlaylist.swift in Sources */,
+				F862146028DD5C7D005A6624 /* LibraryBasedDiscovery.swift in Sources */,
+				F89C1BAA2884341600FDFDBC /* MusicAlbumsApp.swift in Sources */,
+				F89C1BBB288CFAC000FDFDBC /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -195,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -209,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -249,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -270,11 +371,14 @@
 				DEVELOPMENT_TEAM = 3JZK8358R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicDiscovery/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access to continue.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +403,14 @@
 				DEVELOPMENT_TEAM = 3JZK8358R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicDiscovery/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access to continue.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +446,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F89E34C02897396800743B6D /* XCRemoteSwiftPackageReference "ColorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Boris-Em/ColorKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F89E34C12897396800743B6D /* ColorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89E34C02897396800743B6D /* XCRemoteSwiftPackageReference "ColorKit" */;
+			productName = ColorKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F89C1B8E2884243000FDFDBC /* Project object */;
 }

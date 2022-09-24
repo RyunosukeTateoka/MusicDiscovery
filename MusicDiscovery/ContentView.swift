@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var modelData: ModelData
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack() {
+            LibraryBasedDiscovery()
+            if modelData.isSelected {
+                PlaybackBar()
+                    .environmentObject(modelData)
+                    .zIndex(2.0)
+                    .ignoresSafeArea(.keyboard, edges: .bottom)
+            }
+        }
     }
 }
 
