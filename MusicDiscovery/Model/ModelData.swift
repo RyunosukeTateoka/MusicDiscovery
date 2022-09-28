@@ -8,6 +8,7 @@
 import MusicKit
 import MediaPlayer
 import Foundation
+import SwiftUI
 
 final class ModelData: ObservableObject {
     @Published var musicTracks = [MusicTrack]()
@@ -20,10 +21,12 @@ final class ModelData: ObservableObject {
     
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     
+    @MainActor
     init() {
         loadLibraryPlaylist()
     }
     
+    @MainActor
     private func loadLibraryPlaylist(){
         Task {
             let status = await MusicAuthorization.request()
@@ -31,17 +34,11 @@ final class ModelData: ObservableObject {
             case .authorized:
                 do {
                     if #available(iOS 16.0, *) {
-                        let request = MusicLibraryRequest<Playlist>()
+                        var request = MusicLibraryRequest<Playlist>()
+                        request.sort(by: \.lastPlayedDate, ascending: false)
                         let response = try await request.response()
-                        self.libraryPlaylists = response.items.compactMap({
-                            return .init(
-                                id: $0.id.rawValue,
-                                name: $0.name,
-                                imageUrl: $0.artwork?.url(width: 75, height: 75),
-                                lastPlayedDate: $0.lastPlayedDate
-                            )
-                        })
-                        self.libraryPlaylists = sortPlaylistsByLastPlayedDate(playlists: libraryPlaylists)
+                        let playlists = response.items
+                        fetchMusicTracksInPlaylist(playlists: playlists)
                     } else {
                         // Fallback on earlier versions
                     }
@@ -53,22 +50,7 @@ final class ModelData: ObservableObject {
             }
         }
     }
-    
-    private func sortPlaylistsByLastPlayedDate(playlists: [MusicPlaylist]) -> [MusicPlaylist] {
-        return playlists.sorted { (a, b) -> Bool in
-            switch (a.lastPlayedDate, b.lastPlayedDate) {
-            case (.some, .some):
-                return a.lastPlayedDate! > b.lastPlayedDate!
-
-            case (.some, .none):
-                return true
-
-            case (.none, _):
-                return false
-            }
-        }
-    }
-    
+        
     private func generateSearchRequest(searchQuery: String) -> MusicCatalogSearchRequest {
         var request = MusicCatalogSearchRequest(term: searchQuery, types: [Song.self])
         request.limit = 25
@@ -98,6 +80,41 @@ final class ModelData: ObservableObject {
                 break
             }
         }
+    }
+    
+    @MainActor
+    private func fetchMusicTracksInPlaylist(playlists: MusicItemCollection<Playlist>)  {
+        Task {
+            do {
+                for playlist in playlists {
+                    let detailedPlaylist = try await playlist.with(.tracks, preferredSource: .library)
+                    print("*** Detailed Plaulist ***")
+                    print("\(detailedPlaylist)")
+                    let libraryPlaylist = MusicPlaylist(
+                        id: detailedPlaylist.id.rawValue,
+                        name: detailedPlaylist.name,
+                        imageUrl: detailedPlaylist.artwork?.url(width: 75, height: 75),
+                        lastPlayedDate: detailedPlaylist.lastPlayedDate,
+                        musicTracks: getMusicTracksInPlaylist(playlist: detailedPlaylist))
+                    self.libraryPlaylists.append(libraryPlaylist)
+                }
+            }
+        }
+    }
+    
+    private func getMusicTracksInPlaylist(playlist: Playlist) -> [MusicTrack] {
+        var musicTracks = [MusicTrack]()
+        playlist.tracks?.forEach { track in
+            musicTracks.append(MusicTrack(
+                id: track.id.rawValue,
+                name: track.title,
+                artist: track.artistName,
+                imageUrl: track.artwork?.url(width: 75, height: 75)
+            ))
+        }
+        print("*** music tracks in playlist ***")
+        print("\(playlist.tracks)")
+        return musicTracks
     }
 }
 

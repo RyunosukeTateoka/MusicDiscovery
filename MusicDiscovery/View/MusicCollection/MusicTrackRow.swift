@@ -29,8 +29,12 @@ struct MusicTrackRow: View {
             .padding()
         }
         .onTapGesture {
+            print("*** Play Music ***")
+            print("\(musicTrack)")
             modelData.currentTrack = musicTrack
             modelData.musicPlayer.setQueue(with: [musicTrack.id])
+            print("*** Setted music track id ***")
+            print("now playing item: \(modelData.musicPlayer.indexOfNowPlayingItem)")
             modelData.isSelected = true
             modelData.musicPlayer.play()
             modelData.isPlaying = true

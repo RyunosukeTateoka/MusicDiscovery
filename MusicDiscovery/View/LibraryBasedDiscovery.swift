@@ -18,11 +18,28 @@ struct LibraryBasedDiscovery: View {
                 MusicTrackList()
             } else {
                 List {
-                    Section(header: Text("Library Playlists").fontWeight(.bold)) {
-                        ForEach(modelData.libraryPlaylists) { playlist in  PlaylistRow(playlist: playlist)
+                    Section(
+                        header:
+                            HStack{
+                                Text("Library Playlists").fontWeight(.bold)
+                                Spacer()
+                                Button(action: { print("Button Taped") }){
+                                    Text("More...")
+                                }
+                            }
+                    ) {
+                        ForEach(modelData.libraryPlaylists) {
+                            playlist in
+                            NavigationLink(
+                                destination: PlaylistView(playlist: playlist),
+                                label: {
+                                    PlaylistRow(playlist: playlist)
+                                }
+                            )
                         }
                     }
                 }
+                .listStyle(InsetListStyle())
                 .navigationTitle("Search for Discovery")
                 .navigationBarTitleDisplayMode(.automatic)
             }

@@ -24,6 +24,7 @@
 		F89E34C22897396800743B6D /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = F89E34C12897396800743B6D /* ColorKit */; };
 		F89E34C528973FEB00743B6D /* ColorArrange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89E34C428973FEB00743B6D /* ColorArrange.swift */; };
 		F89E34C7289BCC7300743B6D /* ProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89E34C6289BCC7300743B6D /* ProgressSlider.swift */; };
+		F8D28B8F28DF08D2002116A8 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D28B8E28DF08D2002116A8 /* PlaylistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		F89C1BC2288D481700FDFDBC /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 		F89E34C428973FEB00743B6D /* ColorArrange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorArrange.swift; sourceTree = "<group>"; };
 		F89E34C6289BCC7300743B6D /* ProgressSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSlider.swift; sourceTree = "<group>"; };
+		F8D28B8E28DF08D2002116A8 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				F89C1BB02884376B00FDFDBC /* MusicTrackRow.swift */,
 				F89C1BB8288B9AA400FDFDBC /* MusicTrackList.swift */,
 				F862146128DD6878005A6624 /* PlaylistRow.swift */,
+				F8D28B8E28DF08D2002116A8 /* PlaylistView.swift */,
 			);
 			path = MusicCollection;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				F89E34C7289BCC7300743B6D /* ProgressSlider.swift in Sources */,
 				F89C1BC1288D441800FDFDBC /* PlaybackBar.swift in Sources */,
 				F89C1BB52884393000FDFDBC /* MusicTrack.swift in Sources */,
+				F8D28B8F28DF08D2002116A8 /* PlaylistView.swift in Sources */,
 				F89C1BB12884376B00FDFDBC /* MusicTrackRow.swift in Sources */,
 				F89C1B9C2884243000FDFDBC /* ContentView.swift in Sources */,
 				F89C1BC3288D481700FDFDBC /* PlayPauseButton.swift in Sources */,

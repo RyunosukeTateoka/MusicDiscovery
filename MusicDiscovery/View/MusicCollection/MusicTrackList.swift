@@ -20,6 +20,7 @@ struct MusicTrackList: View {
             List(modelData.musicTracks) { musicTrack in
                 MusicTrackRow(musicTrack: musicTrack)
             }
+            .listStyle(InsetListStyle())
             .navigationTitle("Search Results")
         }
         .onChange(of: isSearching) { newValue in
