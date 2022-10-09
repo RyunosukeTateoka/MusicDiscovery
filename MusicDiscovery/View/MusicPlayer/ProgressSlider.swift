@@ -19,22 +19,20 @@ struct ProgressSlider: View {
     }
 
     var body: some View {
-        if let currentMusicTrack = modelData.musicPlayer.nowPlayingItem {
-            Slider (
-                value: $playingTime,
-                in: 0...currentMusicTrack.playbackDuration,
-                onEditingChanged: {
-                    editing in isEditing = editing;
-                    modelData.musicPlayer.currentPlaybackTime = TimeInterval(playingTime);
-                }
-            )
-            .accentColor(.white)
-            .onReceive(timer) { (_) in updatePlayingTime()}
-        }
+        Slider (
+            value: $playingTime,
+            in: 0...(modelData.currentTrack?.duration ?? 0.0),
+            onEditingChanged: {
+                editing in isEditing = editing;
+                modelData.musicPlayer.playbackTime = TimeInterval(playingTime);
+            }
+        )
+        .accentColor(.white)
+        .onReceive(timer) { (_) in updatePlayingTime()}
     }
     
     private func updatePlayingTime() {
-        self.playingTime = modelData.musicPlayer.currentPlaybackTime
+        self.playingTime = modelData.musicPlayer.playbackTime
     }
 }
 

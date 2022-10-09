@@ -11,6 +11,7 @@ struct LibraryBasedDiscovery: View {
     @EnvironmentObject var modelData: ModelData
     @State var musicTracks = [MusicTrack]()
     @State private var searchQuery = ""
+    @State private var isShowingSheet = false
     
     var body: some View {
         NavigationView {
@@ -21,14 +22,24 @@ struct LibraryBasedDiscovery: View {
                     Section(
                         header:
                             HStack{
-                                Text("Library Playlists").fontWeight(.bold)
+                                Text("Recentry Listened Playlists").fontWeight(.bold)
                                 Spacer()
-                                Button(action: { print("Button Taped") }){
-                                    Text("More...")
+                                Button("All Playlists") {
+                                    self.isShowingSheet = true
+                                }
+                                .sheet(isPresented: self.$isShowingSheet) {
+                                    AllPlaylists()
+                                        .presentationDetents([.height(300)])
+                                        .onAppear {
+                                            modelData.playbackBarSpacerHeight = 45 / 100 * UIScreen.main.bounds.size.height
+                                        }
+                                        .onDisappear {
+                                            modelData.playbackBarSpacerHeight = 7 / 100 * UIScreen.main.bounds.size.height
+                                        }
                                 }
                             }
                     ) {
-                        ForEach(modelData.libraryPlaylists) {
+                        ForEach(modelData.latestThreePlaylists) {
                             playlist in
                             NavigationLink(
                                 destination: PlaylistView(playlist: playlist),
@@ -40,7 +51,7 @@ struct LibraryBasedDiscovery: View {
                     }
                 }
                 .listStyle(InsetListStyle())
-                .navigationTitle("Search for Discovery")
+                .navigationTitle("Library")
                 .navigationBarTitleDisplayMode(.automatic)
             }
         }

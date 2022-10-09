@@ -14,6 +14,6 @@ struct MusicPlaylist: Identifiable, Hashable {
     let name: String
     let imageUrl: URL?
     let lastPlayedDate: Date?
-    let musicTracks: [MusicTrack]?
+    let musicTracks: MusicItemCollection<Song>?
 }
 

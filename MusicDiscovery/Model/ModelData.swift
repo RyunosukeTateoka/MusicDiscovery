@@ -11,15 +11,19 @@ import Foundation
 import SwiftUI
 
 final class ModelData: ObservableObject {
-    @Published var musicTracks = [MusicTrack]()
-    @Published var currentTrack: MusicTrack?
+    @Published var musicTracks = MusicItemCollection<Song>()
+    @Published var currentTrack: Song?
     @Published var isPlaying = false
     @Published var isSelected = false
     @Published var isSearching = false
     @Published var searchQuery: String = ""
     @Published var libraryPlaylists = [MusicPlaylist]()
+    @Published var latestThreePlaylists = [MusicPlaylist]()
     
-    var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
+    @Environment(\.isSearching) private var searchStatus
+    @Published var playbackBarSpacerHeight = 7 / 100 * UIScreen.main.bounds.size.height
+    
+    var musicPlayer = ApplicationMusicPlayer.shared
     
     @MainActor
     init() {
@@ -64,14 +68,7 @@ final class ModelData: ObservableObject {
             case .authorized:
                 do {
                     let result = try await generateSearchRequest(searchQuery: searchQuery).response()
-                    self.musicTracks = result.songs.compactMap({
-                        return .init(
-                            id: $0.id.rawValue,
-                            name: $0.title,
-                            artist: $0.artistName,
-                            imageUrl: $0.artwork?.url(width: 75, height: 75)
-                        )
-                    })
+                    self.musicTracks = result.songs
                     print(String(describing: musicTracks[0]))
                 } catch {
                     print(String(describing: error))
@@ -95,26 +92,32 @@ final class ModelData: ObservableObject {
                         name: detailedPlaylist.name,
                         imageUrl: detailedPlaylist.artwork?.url(width: 75, height: 75),
                         lastPlayedDate: detailedPlaylist.lastPlayedDate,
-                        musicTracks: getMusicTracksInPlaylist(playlist: detailedPlaylist))
-                    self.libraryPlaylists.append(libraryPlaylist)
+                        musicTracks: convertTracksToSongs(tracks: detailedPlaylist.tracks)
+                    )
+                    if self.latestThreePlaylists.count < 3 {
+                        self.latestThreePlaylists.append(libraryPlaylist)
+                        self.libraryPlaylists.append(libraryPlaylist)
+                    } else {
+                        self.libraryPlaylists.append(libraryPlaylist)
+                    }
                 }
             }
         }
     }
     
-    private func getMusicTracksInPlaylist(playlist: Playlist) -> [MusicTrack] {
-        var musicTracks = [MusicTrack]()
-        playlist.tracks?.forEach { track in
-            musicTracks.append(MusicTrack(
-                id: track.id.rawValue,
-                name: track.title,
-                artist: track.artistName,
-                imageUrl: track.artwork?.url(width: 75, height: 75)
-            ))
+    private func convertTracksToSongs(tracks: MusicItemCollection<Track>?) -> MusicItemCollection<Song>{
+        var songs = MusicItemCollection<Song>()
+        if let tracks = tracks {
+            tracks.forEach { track in
+                switch track{
+                case .song(let songInTrack):
+                    songs += [songInTrack]
+                default:
+                    break
+                }
+            }
         }
-        print("*** music tracks in playlist ***")
-        print("\(playlist.tracks)")
-        return musicTracks
+        return songs
     }
 }
 

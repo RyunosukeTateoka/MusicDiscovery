@@ -13,10 +13,16 @@ struct PlayPauseButton: View {
     var body: some View {
         Image(systemName: modelData.isPlaying ? "pause.fill" : "play.fill")
             .onTapGesture {
-                if modelData.musicPlayer.playbackState == .paused || modelData.musicPlayer.playbackState == .stopped {
-                    modelData.musicPlayer.play()
-                    withAnimation(Animation.spring(response: 0.6, dampingFraction: 0.7)) {
-                        modelData.isPlaying = true
+                if modelData.isPlaying == false {
+                    Task {
+                        do {
+                            try await modelData.musicPlayer.play()
+                            withAnimation(Animation.spring(response: 0.6, dampingFraction: 0.7)) {
+                                modelData.isPlaying = true
+                            }
+                        } catch {
+                            print("Failed to prepare music player to play.")
+                        }
                     }
                 } else {
                     modelData.musicPlayer.pause()

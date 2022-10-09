@@ -17,7 +17,7 @@ struct PlaybackBar: View {
     
     var body: some View {
         let deviceScreenSize = UIScreen.main.bounds.size.width
-        let artwork = AsyncImage(url: modelData.currentTrack?.imageUrl)
+        let artwork = AsyncImage(url: modelData.currentTrack?.artwork?.url(width: 64, height: 64))
             .aspectRatio(contentMode: .fit)
             .frame(width: 64, height: 64, alignment: .center)
             .cornerRadius(4)
@@ -72,7 +72,7 @@ struct PlaybackBar: View {
     }
     
     private func createBackgroundColor(modelData: ModelData) throws -> Color {
-        if let url = modelData.currentTrack?.imageUrl {
+        if let url = modelData.currentTrack?.artwork?.url(width: 64, height: 64) {
             downloadImageDataAsync(url: url)
         }
         if let currentBackgroundColor = backgroundColor {

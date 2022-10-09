@@ -16,16 +16,15 @@ struct PlaylistView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text(playlist.name)) {
-                    if let musicTracks = playlist.musicTracks {
-                        ForEach(musicTracks, id: \.id) {
-                            musicTrack in
-                            MusicTrackRow(musicTrack: musicTrack)
-                        }
+                if let musicTracks = playlist.musicTracks {
+                    ForEach(musicTracks, id: \.id) {
+                        musicTrack in
+                        MusicTrackRow(musicTrack: musicTrack)
                     }
                 }
             }
             .listStyle(InsetListStyle())
         }
+        .navigationTitle(Text(playlist.name))
     }
 }

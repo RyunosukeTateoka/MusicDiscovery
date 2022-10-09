@@ -11,19 +11,19 @@ import MediaPlayer
 
 struct MusicTrackRow: View {
     @EnvironmentObject var modelData: ModelData
-    let musicTrack: MusicTrack
+    let musicTrack: Song
     
     var body: some View {
         HStack {
-            AsyncImage(url: musicTrack.imageUrl)
+            AsyncImage(url: musicTrack.artwork?.url(width: 80, height: 80))
                 .frame(width: 80, height: 80, alignment: .center)
                 .cornerRadius(8)
             VStack(alignment: .leading) {
-                Text(musicTrack.name)
+                Text(musicTrack.title)
                     .font(.callout)
                     .bold()
                 Spacer()
-                Text(musicTrack.artist)
+                Text(musicTrack.artistName)
                     .font(.subheadline)
             }
             .padding()
@@ -32,12 +32,17 @@ struct MusicTrackRow: View {
             print("*** Play Music ***")
             print("\(musicTrack)")
             modelData.currentTrack = musicTrack
-            modelData.musicPlayer.setQueue(with: [musicTrack.id])
+            modelData.musicPlayer.queue = ApplicationMusicPlayer.Queue(for: [musicTrack])
             print("*** Setted music track id ***")
-            print("now playing item: \(modelData.musicPlayer.indexOfNowPlayingItem)")
             modelData.isSelected = true
-            modelData.musicPlayer.play()
-            modelData.isPlaying = true
+            Task {
+                do {
+                    try await modelData.musicPlayer.play()
+                    modelData.isPlaying = true
+                } catch {
+                    print(String(describing: error))
+                }
+            }
         }
     }
 }
