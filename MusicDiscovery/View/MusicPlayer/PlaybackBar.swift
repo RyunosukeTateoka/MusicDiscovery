@@ -19,7 +19,7 @@ struct PlaybackBar: View {
         let deviceScreenSize = UIScreen.main.bounds.size.width
         let artwork = AsyncImage(url: modelData.currentTrack?.artwork?.url(width: 64, height: 64))
             .aspectRatio(contentMode: .fit)
-            .frame(width: 64, height: 64, alignment: .center)
+            .frame(alignment: .center)
             .cornerRadius(4)
             .padding()
         let currentBackgroundColor = try? createBackgroundColor(modelData: modelData)

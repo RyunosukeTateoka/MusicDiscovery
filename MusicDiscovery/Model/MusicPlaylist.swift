@@ -12,7 +12,7 @@ import MediaPlayer
 struct MusicPlaylist: Identifiable, Hashable {
     var id: String
     let name: String
-    let imageUrl: URL?
+    let artwork: Artwork?
     let lastPlayedDate: Date?
     let musicTracks: MusicItemCollection<Song>?
 }

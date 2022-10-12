@@ -90,7 +90,7 @@ final class ModelData: ObservableObject {
                     let libraryPlaylist = MusicPlaylist(
                         id: detailedPlaylist.id.rawValue,
                         name: detailedPlaylist.name,
-                        imageUrl: detailedPlaylist.artwork?.url(width: 75, height: 75),
+                        artwork: detailedPlaylist.artwork,
                         lastPlayedDate: detailedPlaylist.lastPlayedDate,
                         musicTracks: convertTracksToSongs(tracks: detailedPlaylist.tracks)
                     )
